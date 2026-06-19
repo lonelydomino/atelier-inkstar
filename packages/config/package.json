@@ -1,0 +1,9 @@
+{
+  "name": "@atelier-inkstar/config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./tokens": "./src/tokens.ts",
+    "./brand": "./src/brand.ts"
+  }
+}

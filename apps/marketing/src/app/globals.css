@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --ink-navy: #081020;
+  --ink-navy-deep: #191b2e;
+  --ink-slate: #2d3352;
+  --ink-gold: #d4af37;
+  --ink-pink: #ffb6cc;
+  --ink-white: #ffffff;
+  --ink-purple-glow: #6b4cff;
+  --ink-nebula: #3d2a6d;
+
+  --background: var(--ink-navy);
+  --foreground: #f4f0ff;
+  --muted: #a8b0d4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink-navy: var(--ink-navy);
+  --color-ink-navy-deep: var(--ink-navy-deep);
+  --color-ink-slate: var(--ink-slate);
+  --color-ink-gold: var(--ink-gold);
+  --color-ink-pink: var(--ink-pink);
+  --color-ink-muted: var(--muted);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ink-gold) 35%, transparent);
+  color: var(--ink-white);
+}
+
+.luxury-gradient-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in srgb, var(--ink-purple-glow) 28%, transparent), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 20%, color-mix(in srgb, var(--ink-pink) 12%, transparent), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 10% 80%, color-mix(in srgb, var(--ink-nebula) 35%, transparent), transparent 50%),
+    linear-gradient(180deg, var(--ink-navy) 0%, var(--ink-navy-deep) 45%, #0d1228 100%);
+}
+
+.glass-panel {
+  background: color-mix(in srgb, var(--ink-slate) 35%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink-gold) 22%, transparent);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--ink-white) 4%, transparent) inset,
+    0 24px 80px color-mix(in srgb, #000 45%, transparent);
+}
+
+.gold-border-glow {
+  border: 1px solid color-mix(in srgb, var(--ink-gold) 45%, transparent);
+  box-shadow:
+    0 0 24px color-mix(in srgb, var(--ink-gold) 12%, transparent),
+    0 0 1px color-mix(in srgb, var(--ink-gold) 35%, transparent) inset;
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    110deg,
+    var(--ink-white) 0%,
+    var(--ink-gold) 35%,
+    var(--ink-pink) 55%,
+    var(--ink-white) 75%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.section-shell {
+  width: min(1200px, calc(100% - 3rem));
+  margin-inline: auto;
+}
