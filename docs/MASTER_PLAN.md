@@ -471,4 +471,4 @@ The website is not just a store — it is the **master operating system** for th
 | `900dc83` | Alya persona rules in project |
 | `39146c8` | TikTok Shop URL |
 | `6e99550` | v2 master plan integrated |
-| `TBD` | eBay seller URL |
+| `625075d` | eBay seller URL |
