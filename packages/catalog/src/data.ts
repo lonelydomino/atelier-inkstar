@@ -49,7 +49,7 @@ export const marketplaceLinks: MarketplaceLink[] = [
     id: "etsy",
     name: "Etsy",
     description: "Handcrafted listings & limited drops",
-    href: "https://etsy.com",
+    href: "https://atelierinkstar.etsy.com",
     accent: "#f1641e",
   },
   {
