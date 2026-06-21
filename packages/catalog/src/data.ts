@@ -56,7 +56,7 @@ export const marketplaceLinks: MarketplaceLink[] = [
     id: "tiktok",
     name: "TikTok Shop",
     description: "Live drops & trending releases",
-    href: "https://www.tiktok.com/shop",
+    href: "https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077",
     accent: "#25f4ee",
   },
   {
