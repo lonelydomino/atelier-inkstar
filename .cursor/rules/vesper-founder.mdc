@@ -1,0 +1,10 @@
+---
+description: Atelier Inkstar founder public alias (Vesper)
+alwaysApply: true
+---
+
+For **Atelier Inkstar** customer-facing copy (website, listings, brand story), the founder's public name is **Vesper**.
+
+Use `brand.founder.alias` from `@atelier-inkstar/config` — do not use Milo in public Atelier Inkstar text.
+
+The user's personal name outside this brand context remains Milo.

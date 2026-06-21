@@ -1,17 +1,17 @@
 ---
-description: Chizuru hero asset is temporary — Milo will replace after editing
+description: Chizuru hero asset is temporary — Vesper will replace after editing
 alwaysApply: true
 ---
 
 # Chizuru artwork (temporary)
 
-Milo is using **`chizuru1.png`** (copied to `apps/marketing/public/chizuru/hero.png`) as a **placeholder for now**.
+**Vesper** (Atelier Inkstar founder) is using **`chizuru1.png`** (copied to `apps/marketing/public/chizuru/hero.png`) as a **placeholder for now**.
 
-**He still needs to edit/replace this asset** when his finished Chizuru art is ready. Do not treat the current hero image as final brand-approved artwork.
+**Still needs to edit/replace this asset** when the finished Chizuru art is ready. Do not treat the current hero image as final brand-approved artwork.
 
-When Milo provides an updated file:
+When an updated file is provided:
 1. Replace `public/chizuru/hero.png` (or update `brandAssets.chizuruHero` in `apps/marketing/src/lib/brand-assets.ts`)
 2. Hero + mascot section both read from that path
-3. Ask which file from `Desktop/Atelier Inkstar/02 Mascots/Chizuru/` if he does not specify
+3. Ask which file from `Desktop/Atelier Inkstar/02 Mascots/Chizuru/` if not specified
 
 Until then, keep the site working with the current placeholder and do not lock design decisions to this specific pose/render.

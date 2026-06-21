@@ -4,7 +4,7 @@ export const brandAssets = {
   /** Approved swirly wolf emblem — emblem1 from brand kit */
   emblem: "/brand/emblem.png",
   /**
-   * TEMP: chizuru1.png — Milo will replace after editing a final hero render.
+   * TEMP: chizuru1.png — Vesper will replace after editing a final hero render.
    * Source: Desktop/Atelier Inkstar/02 Mascots/Chizuru/chizuru1.png
    * Used by: hero section + Chizuru mascot section (same file).
    */

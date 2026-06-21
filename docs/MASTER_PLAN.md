@@ -79,7 +79,7 @@ atelier-inkstar/
 | Wordmark (`logo-text2.png`) | ✅ Header + hero |
 | Approved emblem | ✅ Hero accent |
 | Starline decorations | ✅ Hero |
-| Chizuru (`chizuru1.png`) | 🟡 Temporary — Milo will replace after editing |
+| Chizuru (`chizuru1.png`) | 🟡 Temporary — Vesper will replace after editing |
 | Anya mascot | ⬜ Not on site yet |
 | Real product photos in featured grid | ⬜ Gradient placeholders |
 
@@ -449,7 +449,7 @@ The website is not just a store — it is the **master operating system** for th
 
 ---
 
-## Milo action items
+## Vesper action items (founder)
 
 | # | Task |
 |---|------|

@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Assets
 
 - `apps/marketing/public/brand/` — wordmark, emblem
-- `apps/marketing/public/chizuru/hero.png` — **temporary** (Milo editing final)
+- `apps/marketing/public/chizuru/hero.png` — **temporary** (Vesper editing final)
 - `apps/marketing/public/decor/` — starlines
 
 ## Git workflow
