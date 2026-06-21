@@ -34,7 +34,7 @@ export const featuredProducts: FeaturedProduct[] = [
     baseSku: "LOS-LADY",
     name: "Lady of the Scales",
     character: "Lady of the Scales",
-    franchise: "Original",
+    franchise: "Epic Seven",
     accent: "#7ec8ff",
     image: "/products/lady-of-the-scales.png",
   },
