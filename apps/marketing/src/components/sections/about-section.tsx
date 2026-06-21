@@ -23,6 +23,9 @@ export function AboutSection() {
               {paragraph}
             </p>
           ))}
+          <p className="mt-8 font-[family-name:var(--font-display)] text-lg tracking-wide text-ink-gold">
+            — {brand.founder.alias}
+          </p>
         </div>
       </div>
     </section>
