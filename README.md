@@ -35,7 +35,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | 3 — Catalog engine | ⬜ Stub only |
 | 4–8 — Admin, listings, sync, shipping, analytics | ⬜ Not started |
 
-**Marketplace links wired:** [Etsy](https://atelierinkstar.etsy.com), [TikTok Shop](https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077)
+**Marketplace links wired:** [Etsy](https://atelierinkstar.etsy.com), [TikTok Shop](https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077), [eBay](https://www.ebay.com/usr/atelierinkstarshop)
 
 ## Tech stack
 

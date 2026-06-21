@@ -385,7 +385,7 @@ Marketplace-ready listing packages per channel.
 |---------|-----|--------|
 | Etsy | https://atelierinkstar.etsy.com | ✅ In repo |
 | TikTok Shop | https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077 | ✅ In repo |
-| eBay | TBD | ⬜ |
+| eBay | https://www.ebay.com/usr/atelierinkstarshop | ✅ In repo |
 
 ---
 
@@ -454,7 +454,7 @@ The website is not just a store — it is the **master operating system** for th
 | # | Task |
 |---|------|
 | 1 | Final Chizuru edit → replace `public/chizuru/hero.png` |
-| 2 | eBay shop URL |
+| 2 | ~~eBay shop URL~~ | ✅ |
 | 3 | Connect repo to Vercel (`apps/marketing`) |
 | 4 | Newsletter provider choice |
 | 5 | Social profile URLs |
@@ -470,3 +470,5 @@ The website is not just a store — it is the **master operating system** for th
 | `6fc1a90` | Etsy marketplace URL |
 | `900dc83` | Alya persona rules in project |
 | `39146c8` | TikTok Shop URL |
+| `6e99550` | v2 master plan integrated |
+| `TBD` | eBay seller URL |

@@ -63,7 +63,7 @@ export const marketplaceLinks: MarketplaceLink[] = [
     id: "ebay",
     name: "eBay",
     description: "Collectible finds & rare editions",
-    href: "https://ebay.com",
+    href: "https://www.ebay.com/usr/atelierinkstarshop",
     accent: "#e53238",
   },
 ];
