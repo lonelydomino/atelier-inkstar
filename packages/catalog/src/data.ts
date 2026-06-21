@@ -5,7 +5,7 @@ export const featuredProducts: FeaturedProduct[] = [
   {
     id: "makima",
     baseSku: "CSM-MAKIMA",
-    name: "Makima Eclipse",
+    name: "Makima",
     character: "Makima",
     franchise: "Chainsaw Man",
     accent: "#ff6b8a",
@@ -14,7 +14,7 @@ export const featuredProducts: FeaturedProduct[] = [
   {
     id: "unohana",
     baseSku: "BLEACH-UNOHANA",
-    name: "Unohana After Dark",
+    name: "Retsu Unohana",
     character: "Retsu Unohana",
     franchise: "Bleach",
     accent: "#9b7bff",
@@ -23,7 +23,7 @@ export const featuredProducts: FeaturedProduct[] = [
   {
     id: "tamamo",
     baseSku: "FGO-TAMAMO",
-    name: "Tamamo Celestine",
+    name: "Tamamo no Mae",
     character: "Tamamo no Mae",
     franchise: "Fate/Grand Order",
     accent: "#ffb6cc",
@@ -31,7 +31,7 @@ export const featuredProducts: FeaturedProduct[] = [
   },
   {
     id: "lady-of-the-scales",
-    baseSku: "LOS-LADY",
+    baseSku: "E7-LADYSCALES",
     name: "Lady of the Scales",
     character: "Lady of the Scales",
     franchise: "Epic Seven",
