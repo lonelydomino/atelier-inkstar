@@ -14,4 +14,15 @@ export const brand = {
     shop: "atelierinkstar.shop",
     admin: "admin.atelierinkstar.shop",
   },
+  about: {
+    eyebrow: "My Story",
+    title: "One atelier, built by hand",
+    lead:
+      "Atelier Inkstar started as a love letter to the characters and art I grew up with — and grew into something I run myself, sticker by sticker.",
+    paragraphs: [
+      "Every design starts with careful editing: refining linework, color, and composition until it feels worthy of your collection. Then I print, cut, and finish each vinyl sticker myself. No mass production, no shortcuts — just the work it takes to make something that actually feels premium in your hand.",
+      "I’m Milo, and this shop is my craft. I handle the art, the printer, the blade, and the packaging. When you order from Atelier Inkstar, you’re supporting the hours behind every sheet — the proofing, the weeding, the quality checks — not a faceless fulfillment warehouse.",
+      "I’m building this brand for collectors who care about finish, color, and character. If a sticker carries my name, I made sure it earned it.",
+    ],
+  },
 } as const;
