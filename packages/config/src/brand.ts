@@ -24,7 +24,7 @@ export const brand = {
     lead:
       "Atelier Inkstar started as a love letter to the characters and art I grew up with, and grew into something I run myself, sticker by sticker.",
     paragraphs: [
-      "Every design starts with refining and editing until it feels worthy of your collection. Then I print, cut, and finish each vinyl sticker myself. No mass production, no shortcuts. Just the work it takes to make something that actually feels premium in your hand.",
+      "Every design starts with refining and editing until it feels worthy of your collection. Then I print, laminate, and cut each vinyl sticker myself. No mass production, no shortcuts. Just the work it takes to make something that actually feels premium in your hand.",
       "I'm {founder}, and this shop is my craft. I handle the art, the printer, the blade, and the packaging. When you order from Atelier Inkstar, you're supporting the hours behind every sheet: the proofing, the weeding, the quality checks. Not a faceless fulfillment warehouse.",
       "I'm building this brand for collectors who care about finish, color, and character. If a sticker carries my name, I made sure it earned it.",
     ],
