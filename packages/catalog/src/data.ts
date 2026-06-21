@@ -1,15 +1,7 @@
 import type { FeaturedProduct, MarketplaceLink } from "./types";
 
-/** Phase 1 featured stickers — replace image URLs when assets are in R2. */
+/** Phase 1 featured stickers — product mockups in apps/marketing/public/products/ */
 export const featuredProducts: FeaturedProduct[] = [
-  {
-    id: "mythra",
-    baseSku: "XC2-MYTHRA",
-    name: "Mythra Radiant",
-    character: "Mythra",
-    franchise: "Xenoblade Chronicles 2",
-    accent: "#7ec8ff",
-  },
   {
     id: "makima",
     baseSku: "CSM-MAKIMA",
@@ -17,30 +9,43 @@ export const featuredProducts: FeaturedProduct[] = [
     character: "Makima",
     franchise: "Chainsaw Man",
     accent: "#ff6b8a",
+    image: "/products/makima.png",
   },
   {
-    id: "ahri",
-    baseSku: "LOL-AHRI",
-    name: "Ahri Celestine",
-    character: "Ahri",
-    franchise: "League of Legends",
+    id: "unohana",
+    baseSku: "BLEACH-UNOHANA",
+    name: "Unohana After Dark",
+    character: "Retsu Unohana",
+    franchise: "Bleach",
+    accent: "#9b7bff",
+    image: "/products/unohana.png",
+  },
+  {
+    id: "tamamo",
+    baseSku: "FGO-TAMAMO",
+    name: "Tamamo Celestine",
+    character: "Tamamo no Mae",
+    franchise: "Fate/Grand Order",
     accent: "#ffb6cc",
+    image: "/products/tamamo.png",
   },
   {
-    id: "setsuka",
-    baseSku: "SC-SETSUKA",
-    name: "Setsuka Moonpetal",
-    character: "Setsuka",
-    franchise: "Soulcalibur",
-    accent: "#e8d4ff",
+    id: "lady-of-the-scales",
+    baseSku: "LOS-LADY",
+    name: "Lady of the Scales",
+    character: "Lady of the Scales",
+    franchise: "Original",
+    accent: "#7ec8ff",
+    image: "/products/lady-of-the-scales.png",
   },
   {
-    id: "vivian",
-    baseSku: "ZZZ-VIVIAN",
-    name: "Vivian Starshade",
-    character: "Vivian",
-    franchise: "Zenless Zone Zero",
+    id: "maid-luna",
+    baseSku: "E7-MAIDLUNA",
+    name: "Maid Luna",
+    character: "Maid Luna",
+    franchise: "Epic Seven",
     accent: "#d4af37",
+    image: "/products/maid-luna.png",
   },
 ];
 

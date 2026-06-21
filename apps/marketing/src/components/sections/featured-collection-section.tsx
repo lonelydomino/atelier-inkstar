@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import type { FeaturedProduct } from "@atelier-inkstar/catalog";
 import { featuredProducts } from "@atelier-inkstar/catalog";
@@ -43,20 +44,25 @@ function ProductCard({
       <div
         className="relative aspect-square overflow-hidden"
         style={{
-          background: `radial-gradient(circle at 30% 20%, ${product.accent}55, transparent 55%), linear-gradient(160deg, #191b2e, #081020)`,
+          background: `radial-gradient(circle at 30% 20%, ${product.accent}33, transparent 55%), linear-gradient(160deg, #191b2e, #081020)`,
         }}
       >
-        <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.18),transparent_65%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-[#081020] to-transparent" />
-        <div className="absolute inset-0 flex items-end p-5">
-          <div>
-            <p className="text-xs tracking-[0.2em] text-white/70 uppercase">
-              {product.franchise}
-            </p>
-            <p className="font-[family-name:var(--font-display)] text-2xl font-semibold text-white">
-              {product.character}
-            </p>
-          </div>
+        <Image
+          src={product.image}
+          alt={`${product.character} — ${product.name} vinyl sticker`}
+          fill
+          className="object-contain p-3 transition duration-500 group-hover:scale-[1.03]"
+          sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 20vw"
+        />
+        <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.15),transparent_65%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-[#081020ee] via-[#081020aa] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-4">
+          <p className="text-[10px] tracking-[0.2em] text-white/75 uppercase">
+            {product.franchise}
+          </p>
+          <p className="font-[family-name:var(--font-display)] text-xl font-semibold text-white">
+            {product.character}
+          </p>
         </div>
       </div>
       <div className="space-y-1 p-5">

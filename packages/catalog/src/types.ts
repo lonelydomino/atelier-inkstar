@@ -5,6 +5,7 @@ export type FeaturedProduct = {
   character: string;
   franchise: string;
   accent: string;
+  image: string;
 };
 
 export type MarketplaceLink = {
