@@ -1,6 +1,7 @@
 /** Canonical paths for copied brand assets in /public */
 export const brandAssets = {
   wordmark: "/brand/wordmark.png",
+  /** Approved swirly wolf emblem — emblem1 from brand kit */
   emblem: "/brand/emblem.png",
   /**
    * TEMP: chizuru1.png — Milo will replace after editing a final hero render.
