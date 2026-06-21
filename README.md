@@ -2,17 +2,20 @@
 
 Premium celestial anime sticker ecosystem — monorepo for **atelierinkstar.com**, **atelierinkstar.shop**, and **admin.atelierinkstar.shop**.
 
+**Full roadmap (v2):** [docs/MASTER_PLAN.md](docs/MASTER_PLAN.md)
+
 ## Structure
 
 ```
 apps/
   marketing/     # Phase 1 — luxury brand splash (atelierinkstar.com)
+  shop/          # Phase 2 — storefront (planned)
+  admin/         # Phase 4 — internal ops (planned)
 packages/
-  catalog/       # Product data, featured listings, SKU variant generator
+  catalog/       # Product data, SKU generator → Phase 3 catalog engine
   config/        # Brand tokens and shared constants
+  database/      # Supabase / Postgres schema (planned)
 ```
-
-Future apps (Phase 2–3): `shop`, `admin`, `database` (Drizzle + Postgres).
 
 ## Quick start
 
@@ -23,37 +26,30 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Phase 1 — Marketing site
+## Current status (short)
 
-Static-first Next.js App Router experience with:
+| Phase | Status |
+|-------|--------|
+| 1 — `.com` landing | 🟡 Built locally; not deployed |
+| 2 — `.shop` | ⬜ Not started |
+| 3 — Catalog engine | ⬜ Stub only |
+| 4–8 — Admin, listings, sync, shipping, analytics | ⬜ Not started |
 
-- Celestial hero + Chizuru showcase (placeholder art until official assets)
-- Featured collection (data-driven via `@atelier-inkstar/catalog`)
-- Marketplace links (Etsy, TikTok Shop, eBay)
-- About, newsletter, footer
+**Marketplace links wired:** [Etsy](https://atelierinkstar.etsy.com), [TikTok Shop](https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077)
 
 ## Tech stack
 
-- Next.js (App Router) + TypeScript
-- Tailwind CSS v4 + custom luxury CSS
+- Next.js (App Router) + TypeScript + Tailwind v4
 - Framer Motion + GSAP
-- pnpm workspaces
+- pnpm monorepo
+- **Planned:** Supabase, Cloudflare R2, Stripe + PayPal, Vercel
 
 ## Assets
 
-Place official artwork in `apps/marketing/public/`:
-
-- `brand/` — logo, wordmark, emblem
-- `chizuru/` — mascot (hero + about section)
-- `products/` — featured sticker images
-- `decor/` — starlines, optional UI chrome
-
-### Chizuru (pending final edit)
-
-**Current:** `chizuru/hero.png` is a temporary copy of `chizuru1.png` from your Desktop mascot folder.
-
-**Milo still plans to edit/replace this** with a finished render. When ready, overwrite `hero.png` or point `brandAssets.chizuruHero` in `src/lib/brand-assets.ts` at the new file.
+- `apps/marketing/public/brand/` — wordmark, emblem
+- `apps/marketing/public/chizuru/hero.png` — **temporary** (Milo editing final)
+- `apps/marketing/public/decor/` — starlines
 
 ## Git workflow
 
-Commit after each significant change. Push to GitHub as the source of truth.
+Commit after each significant change. Push to https://github.com/lonelydomino/atelier-inkstar
