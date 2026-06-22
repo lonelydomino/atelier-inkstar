@@ -4,6 +4,7 @@
   "private": true,
   "exports": {
     "./tokens": "./src/tokens.ts",
-    "./brand": "./src/brand.ts"
+    "./brand": "./src/brand.ts",
+    "./policies": "./src/policies.ts"
   }
 }

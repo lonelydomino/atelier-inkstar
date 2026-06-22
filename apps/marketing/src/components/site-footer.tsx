@@ -75,17 +75,17 @@ export function SiteFooter() {
           </p>
           <ul className="mt-4 space-y-2 text-sm text-ink-muted">
             <li>
-              <Link href="#" className="hover:text-white">
+              <Link href="/privacy" className="hover:text-white">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-white">
+              <Link href="/terms" className="hover:text-white">
                 Terms of Service
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-white">
+              <Link href="/refunds" className="hover:text-white">
                 Refund Policy
               </Link>
             </li>
