@@ -18,6 +18,10 @@ export const brand = {
     shop: "atelierinkstar.shop",
     admin: "admin.atelierinkstar.shop",
   },
+  contact: {
+    /** Domain alias → forwards to atelierinkstar@gmail.com */
+    email: "vesper@atelierinkstar.com",
+  },
   about: {
     eyebrow: "My Story",
     title: "One atelier, built by hand",

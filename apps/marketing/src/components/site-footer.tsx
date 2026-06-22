@@ -40,8 +40,11 @@ export function SiteFooter() {
           </p>
           <ul className="mt-4 space-y-2 text-sm text-ink-muted">
             <li>
-              <Link href="mailto:hello@atelierinkstar.com" className="hover:text-white">
-                hello@atelierinkstar.com
+              <Link
+                href={`mailto:${brand.contact.email}`}
+                className="hover:text-white"
+              >
+                {brand.contact.email}
               </Link>
             </li>
             <li>
