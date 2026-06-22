@@ -11,7 +11,9 @@ export const brand = {
     name: "Chizuru",
     title: "The Muse of Atelier Inkstar",
     lore:
-      "Dreamer. Creator. Keeper of inspiration. A visionary artist who weaves magic, constellations, and ink into every creation at the celestial atelier.",
+      "The atelier's muse — slow smiles, midnight ink, and constellations that linger exactly where your eyes wander.",
+    blurb:
+      "She doesn't chase the spotlight. She holds it. Every drop carries her touch: bold color, unapologetic charm, and just enough heat to make a sticker feel like a secret worth keeping.",
   },
   domains: {
     marketing: "atelierinkstar.com",

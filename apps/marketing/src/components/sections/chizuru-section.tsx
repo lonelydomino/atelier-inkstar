@@ -33,9 +33,7 @@ export function ChizuruSection() {
             description={brand.mascot.lore}
           />
           <p className="max-w-xl text-sm leading-7 text-ink-muted">
-            Dreamer. Creator. Keeper of inspiration. Chizuru guides the atelier
-            with confident elegance — weaving constellations, ink, and stardust
-            into every sticker the shop releases.
+            {brand.mascot.blurb}
           </p>
         </div>
       </div>
