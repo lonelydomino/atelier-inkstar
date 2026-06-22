@@ -5,7 +5,7 @@ import { ChizuruSection } from "@/components/sections/chizuru-section";
 import { FeaturedCollectionSection } from "@/components/sections/featured-collection-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { MarketplaceSection } from "@/components/sections/marketplace-section";
-import { NewsletterSection } from "@/components/sections/newsletter-section";
+// NewsletterSection — hidden until provider is wired (see .cursor/rules/newsletter-pending.mdc)
 import { StarfieldBackground } from "@/components/visual/starfield-background";
 
 export default function Home() {
@@ -20,7 +20,6 @@ export default function Home() {
           <MarketplaceSection />
           <AboutSection />
           <ChizuruSection />
-          <NewsletterSection />
         </main>
         <SiteFooter />
       </div>
