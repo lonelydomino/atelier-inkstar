@@ -48,13 +48,23 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-white">
+              <Link
+                href={brand.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
                 Instagram
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-white">
-                TikTok
+              <Link
+                href={brand.social.tiktokShop}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                TikTok Shop
               </Link>
             </li>
           </ul>

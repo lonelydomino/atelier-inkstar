@@ -24,6 +24,11 @@ export const brand = {
     /** Domain alias → forwards to atelierinkstar@gmail.com */
     email: "vesper@atelierinkstar.com",
   },
+  social: {
+    instagram: "https://www.instagram.com/atelierinkstar/",
+    tiktokShop:
+      "https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077",
+  },
   about: {
     eyebrow: "My Story",
     title: "One atelier, built by hand",
