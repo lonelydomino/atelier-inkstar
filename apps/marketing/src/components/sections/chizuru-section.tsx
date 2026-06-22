@@ -20,8 +20,8 @@ export function ChizuruSection() {
           <Image
             src={brandAssets.chizuruHero}
             alt={`${brand.mascot.name} — official mascot artwork`}
-            width={1024}
-            height={1536}
+            width={713}
+            height={1024}
             className="h-auto w-full rounded-[1.25rem]"
             sizes="(max-width: 1024px) 90vw, 480px"
           />

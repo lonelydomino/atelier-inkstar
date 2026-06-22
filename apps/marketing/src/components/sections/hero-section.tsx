@@ -106,8 +106,8 @@ export function HeroSection() {
             <Image
               src={brandAssets.chizuruHero}
               alt={`${brand.mascot.name} — ${brand.mascot.title}`}
-              width={1024}
-              height={1536}
+              width={713}
+              height={1024}
               priority
               className="h-auto w-full drop-shadow-[0_24px_80px_rgba(0,0,0,0.55)]"
               sizes="(max-width: 1024px) 90vw, 512px"
