@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: `${brand.name} — Premium Anime Stickers & Collectibles`,
   description: brand.description,
   metadataBase: new URL("https://atelierinkstar.com"),
+  icons: {
+    icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: brand.name,
     description: brand.description,
