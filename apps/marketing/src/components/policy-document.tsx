@@ -59,9 +59,8 @@ export function PolicyDocumentView({ policy }: PolicyDocumentViewProps) {
               ))}
             </div>
             <p className="mt-12 border-t border-white/8 pt-8 text-sm leading-7 text-ink-muted">
-              These policies are provided for general information about how{" "}
-              {brand.name} operates. They are not legal advice. For questions,
-              email{" "}
+              These policies are provided for general information about how I run{" "}
+              {brand.name}. They are not legal advice. For questions, email{" "}
               <Link
                 href={`mailto:${brand.contact.email}`}
                 className="text-ink-gold hover:text-white"
