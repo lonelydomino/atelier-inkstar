@@ -19,9 +19,15 @@ export function SiteFooter() {
               aria-hidden
               className="shrink-0 opacity-90"
             />
-            <p className="font-[family-name:var(--font-display)] text-2xl font-semibold text-white">
-              {brand.name}
-            </p>
+            <span className="relative block h-10 w-48 sm:h-11 sm:w-56">
+              <Image
+                src={brandAssets.wordmark}
+                alt={brand.name}
+                fill
+                className="object-contain object-left"
+                sizes="(max-width: 640px) 192px, 224px"
+              />
+            </span>
           </div>
           <p className="mt-3 max-w-sm text-sm leading-7 text-ink-muted">
             A celestial anime atelier crafting premium stickers and collectibles
