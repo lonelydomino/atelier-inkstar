@@ -18,10 +18,10 @@ export function ChizuruSection() {
           className="gold-border-glow glass-panel relative overflow-hidden rounded-[2rem] p-4 md:p-6"
         >
           <Image
-            src={brandAssets.chizuruHero}
+            src={brandAssets.chizuruMascot}
             alt={`${brand.mascot.name} — official mascot artwork`}
-            width={713}
-            height={1024}
+            width={1024}
+            height={938}
             className="h-auto w-full rounded-[1.25rem]"
             sizes="(max-width: 1024px) 90vw, 480px"
           />
