@@ -13,15 +13,25 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#081020]/70 backdrop-blur-xl">
       <div className="section-shell flex h-16 items-center justify-between gap-4">
-        <Link href="#" className="relative block h-9 w-44 shrink-0 sm:w-52">
+        <Link href="#" className="flex shrink-0 items-center gap-3">
           <Image
-            src={brandAssets.wordmark}
-            alt="Atelier Inkstar"
-            fill
-            className="object-contain object-left"
-            priority
-            sizes="(max-width: 640px) 176px, 208px"
+            src={brandAssets.emblem}
+            alt=""
+            width={36}
+            height={36}
+            aria-hidden
+            className="shrink-0 opacity-90"
           />
+          <span className="relative block h-9 w-44 sm:w-52">
+            <Image
+              src={brandAssets.wordmark}
+              alt="Atelier Inkstar"
+              fill
+              className="object-contain object-left"
+              priority
+              sizes="(max-width: 640px) 176px, 208px"
+            />
+          </span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => (

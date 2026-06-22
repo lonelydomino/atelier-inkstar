@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { brand } from "@atelier-inkstar/config/brand";
+import { brandAssets } from "@/lib/brand-assets";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -8,9 +10,19 @@ export function SiteFooter() {
     <footer className="border-t border-white/8 bg-[#060b16] py-14">
       <div className="section-shell grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="font-[family-name:var(--font-display)] text-2xl font-semibold text-white">
-            {brand.name}
-          </p>
+          <div className="flex items-center gap-3">
+            <Image
+              src={brandAssets.emblem}
+              alt=""
+              width={40}
+              height={40}
+              aria-hidden
+              className="shrink-0 opacity-90"
+            />
+            <p className="font-[family-name:var(--font-display)] text-2xl font-semibold text-white">
+              {brand.name}
+            </p>
+          </div>
           <p className="mt-3 max-w-sm text-sm leading-7 text-ink-muted">
             A celestial anime atelier crafting premium stickers and collectibles
             with ink, passion, and stardust.

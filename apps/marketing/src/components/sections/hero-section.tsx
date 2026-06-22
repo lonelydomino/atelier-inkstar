@@ -73,21 +73,18 @@ export function HeroSection() {
               width={56}
               height={56}
               aria-hidden
-              className="opacity-90"
+              className="shrink-0 opacity-90"
             />
-            <p className="text-xs font-semibold tracking-[0.35em] text-ink-gold uppercase">
-              Celestial Anime Atelier
-            </p>
-          </div>
-          <div className="relative h-16 w-full max-w-md sm:h-20">
-            <Image
-              src={brandAssets.wordmark}
-              alt={brand.name}
-              fill
-              className="object-contain object-left"
-              priority
-              sizes="(max-width: 768px) 100vw, 448px"
-            />
+            <div className="relative h-16 w-full max-w-md sm:h-20">
+              <Image
+                src={brandAssets.wordmark}
+                alt={brand.name}
+                fill
+                className="object-contain object-left"
+                priority
+                sizes="(max-width: 768px) 100vw, 448px"
+              />
+            </div>
           </div>
           <p className="max-w-xl text-lg leading-8 text-ink-muted md:text-xl">
             {brand.description}
