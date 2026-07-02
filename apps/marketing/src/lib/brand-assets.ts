@@ -3,6 +3,11 @@ export const brandAssets = {
   wordmark: "/brand/wordmark.png",
   /** Approved swirly wolf emblem — alt emblem (orbital ring) from brand kit */
   emblem: "/brand/emblem.png",
+  ebayIcon: "/brand/ebay-icon.png",
+  etsyIcon: "/brand/etsy-icon.png",
+  instagramIcon: "/brand/instagram-icon.png",
+  pixivIcon: "/brand/pixiv-icon.png",
+  tiktokIcon: "/brand/tiktok-icon.png",
   /** chizuru1 — hero section (updated render) */
   chizuruHero: "/chizuru/hero.png",
   /** chizuru part 2 — mascot showcase section */

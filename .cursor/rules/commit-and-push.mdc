@@ -1,0 +1,27 @@
+---
+description: Commit and push to origin after completing work in this repo
+alwaysApply: true
+---
+
+# Commit and push (Atelier Inkstar)
+
+Milo wants changes **committed and pushed** without being asked each time.
+
+## When to commit
+
+After finishing a coherent chunk of work (feature, fix, asset update, copy change) in this session:
+
+1. Run `git status` and `git diff` if needed
+2. Stage relevant files — never commit secrets (`.env`, credentials)
+3. Commit with a concise message matching repo style (`feat:`, `fix:`, `chore:`, `copy:`, `assets:`)
+4. **Push to `origin`** on the current branch (usually `main`)
+
+## Do not
+
+- Wait for Milo to say "commit" or "push" before shipping completed work
+- Push force to `main` unless Milo explicitly requests it
+- Amend commits that were already pushed
+
+## If nothing changed
+
+Skip commit/push — do not create empty commits.

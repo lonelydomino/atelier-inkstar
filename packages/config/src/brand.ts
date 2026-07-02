@@ -26,6 +26,7 @@ export const brand = {
   },
   social: {
     instagram: "https://www.instagram.com/atelierinkstar/",
+    pixiv: "https://www.pixiv.net/en/users/127432752",
     tiktokShop:
       "https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077",
   },

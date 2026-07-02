@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import gsap from "gsap";
 import { marketplaceLinks } from "@atelier-inkstar/catalog";
 import { brand } from "@atelier-inkstar/config/brand";
@@ -9,24 +9,52 @@ import {
   EbayIcon,
   EtsyIcon,
   InstagramIcon,
+  PixivIcon,
   PlatformIconBadge,
   TikTokIcon,
 } from "@/components/platform-icons";
 import { brandAssets } from "@/lib/brand-assets";
 
-const heroLinks = [
+type HeroLink = {
+  id: string;
+  name: string;
+  description: string;
+  href: string;
+  icon: ReactNode;
+  badgeClassName?: string;
+};
+
+const brandIconBadgeClassName =
+  "border-white/20 bg-transparent p-0 group-hover:bg-transparent";
+
+const heroLinks: HeroLink[] = [
   {
     id: "instagram",
     name: "Instagram",
     description: "Follow the atelier & new drops",
     href: brand.social.instagram,
+    badgeClassName: brandIconBadgeClassName,
     icon: <InstagramIcon />,
+  },
+  {
+    id: "pixiv",
+    name: "Pixiv",
+    description: "Art, sketches & works in progress",
+    href: brand.social.pixiv,
+    badgeClassName: brandIconBadgeClassName,
+    icon: <PixivIcon />,
   },
   ...marketplaceLinks.map((marketplace) => ({
     id: marketplace.id,
     name: marketplace.name,
     description: marketplace.description,
     href: marketplace.href,
+    badgeClassName:
+      marketplace.id === "ebay"
+        ? "border-white/20 bg-white p-0 group-hover:bg-white"
+        : marketplace.id === "etsy" || marketplace.id === "tiktok"
+          ? "border-white/20 bg-transparent p-0 group-hover:bg-transparent"
+          : undefined,
     icon:
       marketplace.id === "etsy" ? (
         <EtsyIcon />
@@ -143,7 +171,9 @@ export function HeroSection() {
                     rel="noopener noreferrer"
                     className="glass-panel group flex items-center gap-4 rounded-2xl p-4 transition hover:border-ink-gold/40 hover:bg-white/6"
                   >
-                    <PlatformIconBadge>{link.icon}</PlatformIconBadge>
+                    <PlatformIconBadge className={link.badgeClassName}>
+                      {link.icon}
+                    </PlatformIconBadge>
                     <div className="min-w-0 flex-1">
                       <p className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">
                         {link.name}
