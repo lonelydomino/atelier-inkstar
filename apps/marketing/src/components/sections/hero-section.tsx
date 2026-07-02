@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { brand } from "@atelier-inkstar/config/brand";
+import { SocialLinks } from "@/components/social-links";
 import { LuxuryButton } from "@/components/ui/primitives";
 import { brandAssets } from "@/lib/brand-assets";
 
@@ -86,6 +87,7 @@ export function HeroSection() {
               />
             </div>
           </div>
+          <SocialLinks className="-mt-2" />
           <p className="max-w-xl text-lg leading-8 text-ink-muted md:text-xl">
             {brand.description}
           </p>
