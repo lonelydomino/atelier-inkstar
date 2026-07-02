@@ -24,7 +24,7 @@ export function SiteHeader() {
       ([entry]) => setHeroInView(entry.isIntersecting),
       {
         threshold: 0.12,
-        rootMargin: "-4rem 0px -35% 0px",
+        rootMargin: "-64px 0px -35% 0px",
       },
     );
 
