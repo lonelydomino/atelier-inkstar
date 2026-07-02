@@ -3,10 +3,40 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { marketplaceLinks } from "@atelier-inkstar/catalog";
 import { brand } from "@atelier-inkstar/config/brand";
-import { SocialLinks } from "@/components/social-links";
-import { LuxuryButton } from "@/components/ui/primitives";
+import {
+  EbayIcon,
+  EtsyIcon,
+  InstagramIcon,
+  PlatformIconBadge,
+  TikTokIcon,
+} from "@/components/platform-icons";
 import { brandAssets } from "@/lib/brand-assets";
+
+const heroLinks = [
+  {
+    id: "instagram",
+    name: "Instagram",
+    description: "Follow the atelier & new drops",
+    href: brand.social.instagram,
+    icon: <InstagramIcon />,
+  },
+  ...marketplaceLinks.map((marketplace) => ({
+    id: marketplace.id,
+    name: marketplace.name,
+    description: marketplace.description,
+    href: marketplace.href,
+    icon:
+      marketplace.id === "etsy" ? (
+        <EtsyIcon />
+      ) : marketplace.id === "tiktok" ? (
+        <TikTokIcon />
+      ) : (
+        <EbayIcon />
+      ),
+  })),
+];
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,8 +75,9 @@ export function HeroSection() {
 
   return (
     <section
+      id="marketplaces"
       ref={sectionRef}
-      className="luxury-gradient-bg relative flex min-h-screen items-center pt-24 pb-20"
+      className="luxury-gradient-bg relative flex min-h-screen items-center pt-24 pb-20 md:pb-28"
     >
       <Image
         src={brandAssets.decor.starlineLeft}
@@ -65,7 +96,7 @@ export function HeroSection() {
         className="pointer-events-none absolute top-28 right-0 hidden opacity-40 lg:block"
       />
 
-      <div className="section-shell grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="section-shell grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div data-hero="copy" className="flex flex-col gap-6">
           <div className="flex items-center gap-4">
             <Image
@@ -87,15 +118,48 @@ export function HeroSection() {
               />
             </div>
           </div>
-          <SocialLinks className="-mt-2" />
+
           <p className="max-w-xl text-lg leading-8 text-ink-muted md:text-xl">
             {brand.description}
           </p>
-          <div className="flex flex-wrap gap-4 pt-2">
-            <LuxuryButton href="#marketplaces">Shop Collection</LuxuryButton>
-            <LuxuryButton href="#collection" variant="secondary">
-              Browse Catalog
-            </LuxuryButton>
+
+          <div className="flex flex-col gap-4 pt-1">
+            <div className="flex flex-col gap-1">
+              <p className="text-xs font-semibold tracking-[0.28em] text-ink-gold uppercase">
+                Shop the atelier
+              </p>
+              <p className="max-w-md text-sm leading-6 text-ink-muted">
+                Find our releases on trusted marketplaces while the custom .shop
+                experience comes online.
+              </p>
+            </div>
+
+            <ul className="grid gap-3">
+              {heroLinks.map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass-panel group flex items-center gap-4 rounded-2xl p-4 transition hover:border-ink-gold/40 hover:bg-white/6"
+                  >
+                    <PlatformIconBadge>{link.icon}</PlatformIconBadge>
+                    <div className="min-w-0 flex-1">
+                      <p className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">
+                        {link.name}
+                      </p>
+                      <p className="text-sm text-ink-muted">{link.description}</p>
+                    </div>
+                    <span
+                      aria-hidden
+                      className="shrink-0 text-sm font-semibold text-ink-gold opacity-70 transition group-hover:translate-x-0.5 group-hover:opacity-100"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
