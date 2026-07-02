@@ -105,7 +105,7 @@ export function HeroSection() {
     <section
       id="marketplaces"
       ref={sectionRef}
-      className="luxury-gradient-bg relative flex min-h-screen items-center pt-24 pb-20 md:pb-28"
+      className="luxury-gradient-bg relative flex min-h-screen items-start pt-28 pb-20 md:pb-28 xl:items-center xl:pt-24"
     >
       <Image
         src={brandAssets.decor.starlineLeft}
@@ -113,7 +113,7 @@ export function HeroSection() {
         width={280}
         height={120}
         aria-hidden
-        className="pointer-events-none absolute top-28 left-0 hidden opacity-40 lg:block"
+        className="pointer-events-none absolute top-8 left-0 z-0 hidden opacity-40 xl:block"
       />
       <Image
         src={brandAssets.decor.starlineRight}
@@ -121,12 +121,12 @@ export function HeroSection() {
         width={280}
         height={120}
         aria-hidden
-        className="pointer-events-none absolute top-28 right-0 hidden opacity-40 lg:block"
+        className="pointer-events-none absolute top-8 right-0 z-0 hidden opacity-40 xl:block"
       />
 
-      <div className="section-shell grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="section-shell relative z-10 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div data-hero="copy" className="flex flex-col gap-6">
-          <div className="flex items-center gap-4">
+          <div className="relative z-10 flex items-center gap-4">
             <Image
               src={brandAssets.emblem}
               alt=""
