@@ -27,7 +27,7 @@ type HeroLink = {
 const brandIconBadgeClassName =
   "border-white/20 bg-transparent p-0 group-hover:bg-transparent";
 
-const heroLinks: HeroLink[] = [
+const socialLinks: HeroLink[] = [
   {
     id: "instagram",
     name: "Instagram",
@@ -44,27 +44,30 @@ const heroLinks: HeroLink[] = [
     badgeClassName: brandIconBadgeClassName,
     icon: <PixivIcon />,
   },
-  ...marketplaceLinks.map((marketplace) => ({
-    id: marketplace.id,
-    name: marketplace.name,
-    description: marketplace.description,
-    href: marketplace.href,
-    badgeClassName:
-      marketplace.id === "ebay"
-        ? "border-white/20 bg-white p-0 group-hover:bg-white"
-        : marketplace.id === "etsy" || marketplace.id === "tiktok"
-          ? "border-white/20 bg-transparent p-0 group-hover:bg-transparent"
-          : undefined,
-    icon:
-      marketplace.id === "etsy" ? (
-        <EtsyIcon />
-      ) : marketplace.id === "tiktok" ? (
-        <TikTokIcon />
-      ) : (
-        <EbayIcon />
-      ),
-  })),
 ];
+
+const marketplaceHeroLinks: HeroLink[] = marketplaceLinks.map((marketplace) => ({
+  id: marketplace.id,
+  name: marketplace.name,
+  description: marketplace.description,
+  href: marketplace.href,
+  badgeClassName:
+    marketplace.id === "ebay"
+      ? "border-white/20 bg-white p-0 group-hover:bg-white"
+      : marketplace.id === "etsy" || marketplace.id === "tiktok"
+        ? "border-white/20 bg-transparent p-0 group-hover:bg-transparent"
+        : undefined,
+  icon:
+    marketplace.id === "etsy" ? (
+      <EtsyIcon />
+    ) : marketplace.id === "tiktok" ? (
+      <TikTokIcon />
+    ) : (
+      <EbayIcon />
+    ),
+}));
+
+const heroLinks: HeroLink[] = [...marketplaceHeroLinks, ...socialLinks];
 
 export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
