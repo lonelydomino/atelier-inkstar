@@ -193,7 +193,7 @@ export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: b
                 Shop the atelier
               </p>
               <p className="max-w-md text-sm leading-6 text-ink-muted">
-                Find our releases on trusted marketplaces while the custom .shop
+                Find my releases on trusted marketplaces while the custom .shop
                 experience comes online.
               </p>
             </div>
@@ -205,7 +205,7 @@ export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: b
                 Follow the atelier
               </p>
               <p className="max-w-md text-sm leading-6 text-ink-muted">
-                Instagram, Pixiv, and studio updates while we grow the collection.
+                Instagram, Pixiv, and studio updates while I grow the collection.
               </p>
             </div>
 

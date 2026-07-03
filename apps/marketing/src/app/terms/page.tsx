@@ -8,7 +8,7 @@ const policy = getPolicy("terms");
 
 export const metadata: Metadata = {
   title: `Terms of Service — ${brand.name}`,
-  description: `Terms for using ${brand.name} and our website.`,
+  description: `Terms for using ${brand.name} and my website.`,
 };
 
 export default function TermsPage() {
