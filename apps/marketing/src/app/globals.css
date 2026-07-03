@@ -166,12 +166,11 @@ body {
 }
 
 .sale-banner-headline {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: clamp(1.96rem, 4.32vw, 2.9rem);
-  font-weight: 700;
-  font-style: normal;
-  line-height: 1.05;
-  letter-spacing: 0.055em;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
   background: linear-gradient(
     110deg,
     #ffffff 0%,
@@ -189,12 +188,10 @@ body {
 }
 
 .sale-banner-subline {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
   font-size: clamp(1.35rem, 2.97vw, 1.82rem);
-  font-weight: 600;
-  font-style: normal;
-  line-height: 1.15;
-  letter-spacing: 0.045em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 .sale-banner-dates {
@@ -205,10 +202,9 @@ body {
 }
 
 .sale-banner-discount {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.04em;
   background: linear-gradient(
     110deg,
     #fff8e7 0%,
