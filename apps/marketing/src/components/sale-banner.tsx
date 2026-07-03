@@ -20,9 +20,9 @@ export function SaleBanner() {
           >
             ✦
           </span>
-          <p className="sale-banner-copy flex flex-col items-center gap-1 text-xl font-black tracking-wide sm:text-2xl md:text-3xl">
-            <span className="shimmer-text">{headline}</span>
-            <span className="text-white">{datesLabel}</span>
+          <p className="sale-banner-copy flex flex-col items-center gap-1 text-xl tracking-wide sm:text-2xl md:text-3xl">
+            <span className="sale-banner-headline shimmer-text">{headline}</span>
+            <span className="sale-banner-dates text-white">{datesLabel}</span>
           </p>
           <span
             className="sale-banner-sparkle text-xl text-ink-gold sm:text-2xl md:text-3xl"
