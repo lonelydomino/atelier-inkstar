@@ -67,7 +67,38 @@ const marketplaceHeroLinks: HeroLink[] = marketplaceLinks.map((marketplace) => (
     ),
 }));
 
-const heroLinks: HeroLink[] = [...marketplaceHeroLinks, ...socialLinks];
+function HeroLinkList({ links }: { links: HeroLink[] }) {
+  return (
+    <ul className="grid gap-3">
+      {links.map((link) => (
+        <li key={link.id}>
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-panel group flex items-center gap-4 rounded-2xl p-4 transition hover:border-ink-gold/40 hover:bg-white/6"
+          >
+            <PlatformIconBadge className={link.badgeClassName}>
+              {link.icon}
+            </PlatformIconBadge>
+            <div className="min-w-0 flex-1">
+              <p className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">
+                {link.name}
+              </p>
+              <p className="text-sm text-ink-muted">{link.description}</p>
+            </div>
+            <span
+              aria-hidden
+              className="shrink-0 text-sm font-semibold text-ink-gold opacity-70 transition group-hover:translate-x-0.5 group-hover:opacity-100"
+            >
+              →
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -167,34 +198,18 @@ export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: b
               </p>
             </div>
 
-            <ul className="grid gap-3">
-              {heroLinks.map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="glass-panel group flex items-center gap-4 rounded-2xl p-4 transition hover:border-ink-gold/40 hover:bg-white/6"
-                  >
-                    <PlatformIconBadge className={link.badgeClassName}>
-                      {link.icon}
-                    </PlatformIconBadge>
-                    <div className="min-w-0 flex-1">
-                      <p className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">
-                        {link.name}
-                      </p>
-                      <p className="text-sm text-ink-muted">{link.description}</p>
-                    </div>
-                    <span
-                      aria-hidden
-                      className="shrink-0 text-sm font-semibold text-ink-gold opacity-70 transition group-hover:translate-x-0.5 group-hover:opacity-100"
-                    >
-                      →
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <HeroLinkList links={marketplaceHeroLinks} />
+
+            <div className="flex flex-col gap-1 pt-2">
+              <p className="text-xs font-semibold tracking-[0.28em] text-ink-gold uppercase">
+                Follow the atelier
+              </p>
+              <p className="max-w-md text-sm leading-6 text-ink-muted">
+                Instagram, Pixiv, and studio updates while we grow the collection.
+              </p>
+            </div>
+
+            <HeroLinkList links={socialLinks} />
           </div>
         </div>
 
