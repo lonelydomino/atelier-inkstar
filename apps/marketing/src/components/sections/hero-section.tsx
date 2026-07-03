@@ -67,7 +67,13 @@ const marketplaceHeroLinks: HeroLink[] = marketplaceLinks.map((marketplace) => (
     ),
 }));
 
-function HeroLinkList({ links }: { links: HeroLink[] }) {
+function HeroLinkList({
+  links,
+  shimmer = false,
+}: {
+  links: HeroLink[];
+  shimmer?: boolean;
+}) {
   return (
     <ul className="grid gap-3">
       {links.map((link) => (
@@ -76,7 +82,7 @@ function HeroLinkList({ links }: { links: HeroLink[] }) {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-panel group flex items-center gap-4 rounded-2xl p-4 transition hover:border-ink-gold/40 hover:bg-white/6"
+            className={`glass-panel group relative flex items-center gap-4 overflow-hidden rounded-2xl p-4 transition hover:border-ink-gold/40 hover:bg-white/6${shimmer ? " shimmer-panel" : ""}`}
           >
             <PlatformIconBadge className={link.badgeClassName}>
               {link.icon}
@@ -198,7 +204,7 @@ export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: b
               </p>
             </div>
 
-            <HeroLinkList links={marketplaceHeroLinks} />
+            <HeroLinkList links={marketplaceHeroLinks} shimmer />
 
             <div className="flex flex-col gap-1 pt-2">
               <p className="text-xs font-semibold tracking-[0.28em] text-ink-gold uppercase">
