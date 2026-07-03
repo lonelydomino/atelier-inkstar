@@ -66,7 +66,7 @@ const heroLinks: HeroLink[] = [
   })),
 ];
 
-export function HeroSection() {
+export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -105,7 +105,9 @@ export function HeroSection() {
     <section
       id="marketplaces"
       ref={sectionRef}
-      className="luxury-gradient-bg relative flex min-h-screen items-start pt-28 pb-20 md:pb-28 xl:items-center xl:pt-24"
+      className={`luxury-gradient-bg relative flex min-h-screen items-start pb-20 md:pb-28 xl:items-center xl:pt-24 ${
+        saleBannerActive ? "pt-[9.75rem]" : "pt-28"
+      }`}
     >
       <Image
         src={brandAssets.decor.starlineLeft}

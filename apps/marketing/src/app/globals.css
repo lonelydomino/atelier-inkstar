@@ -114,6 +114,56 @@ body {
   }
 }
 
+@keyframes sale-banner-shine {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes sale-banner-sparkle {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.sale-banner {
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--ink-nebula) 85%, #000) 0%,
+      color-mix(in srgb, var(--ink-purple-glow) 70%, #000) 35%,
+      color-mix(in srgb, var(--ink-gold) 35%, var(--ink-navy-deep)) 50%,
+      color-mix(in srgb, var(--ink-purple-glow) 70%, #000) 65%,
+      color-mix(in srgb, var(--ink-nebula) 85%, #000) 100%
+    );
+  box-shadow:
+    0 0 28px color-mix(in srgb, var(--ink-gold) 22%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--ink-white) 12%, transparent);
+}
+
+.sale-banner-shine {
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    color-mix(in srgb, var(--ink-white) 28%, transparent) 50%,
+    transparent 65%
+  );
+  animation: sale-banner-shine 4.5s ease-in-out infinite;
+}
+
+.sale-banner-sparkle {
+  animation: sale-banner-sparkle 2.2s ease-in-out infinite;
+}
+
 .section-shell {
   width: min(1200px, calc(100% - 3rem));
   margin-inline: auto;
