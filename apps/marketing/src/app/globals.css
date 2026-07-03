@@ -162,6 +162,68 @@ body {
 
 .sale-banner-sparkle {
   animation: sale-banner-sparkle 2.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--ink-gold) 55%, transparent));
+}
+
+.sale-banner-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3.2vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  background: linear-gradient(
+    110deg,
+    #ffffff 0%,
+    #f0d78c 22%,
+    var(--ink-gold) 42%,
+    var(--ink-pink) 58%,
+    #ffffff 78%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sale-banner-text-shimmer 3.5s linear infinite;
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--ink-gold) 50%, transparent));
+}
+
+.sale-banner-subline {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.sale-banner-dates {
+  color: color-mix(in srgb, var(--ink-white) 92%, var(--ink-gold));
+  text-shadow:
+    0 0 12px color-mix(in srgb, var(--ink-white) 25%, transparent),
+    0 0 24px color-mix(in srgb, var(--ink-gold) 18%, transparent);
+}
+
+.sale-banner-discount {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: linear-gradient(
+    110deg,
+    #fff8e7 0%,
+    var(--ink-gold) 40%,
+    #fff 55%,
+    #f0d78c 75%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sale-banner-text-shimmer 2.8s linear infinite;
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--ink-gold) 65%, transparent));
+}
+
+@keyframes sale-banner-text-shimmer {
+  to {
+    background-position: 220% center;
+  }
 }
 
 .shimmer-panel::after {
