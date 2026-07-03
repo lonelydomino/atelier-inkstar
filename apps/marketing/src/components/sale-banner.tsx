@@ -15,17 +15,17 @@ export function SaleBanner() {
       <div className="section-shell relative flex min-h-[4.5rem] items-center justify-center py-5 text-center sm:min-h-[5.5rem] sm:py-6">
         <div className="flex items-center justify-center gap-3 sm:gap-4">
           <span
-            className="sale-banner-sparkle text-lg text-ink-gold sm:text-xl md:text-2xl"
+            className="sale-banner-sparkle text-xl text-ink-gold sm:text-2xl md:text-3xl"
             aria-hidden
           >
             ✦
           </span>
-          <p className="sale-banner-copy flex flex-col items-center gap-1 text-lg font-black tracking-wide sm:text-xl md:text-2xl">
+          <p className="sale-banner-copy flex flex-col items-center gap-1 text-xl font-black tracking-wide sm:text-2xl md:text-3xl">
             <span className="shimmer-text">{headline}</span>
             <span className="text-white">{datesLabel}</span>
           </p>
           <span
-            className="sale-banner-sparkle text-lg text-ink-gold sm:text-xl md:text-2xl"
+            className="sale-banner-sparkle text-xl text-ink-gold sm:text-2xl md:text-3xl"
             aria-hidden
           >
             ✦
