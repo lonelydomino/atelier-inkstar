@@ -42,18 +42,20 @@ function ProductCard({
       className="gold-border-glow group glass-panel overflow-hidden rounded-3xl"
     >
       <div
-        className="relative aspect-square overflow-hidden"
+        className="relative aspect-square overflow-hidden rounded-t-3xl"
         style={{
           background: `radial-gradient(circle at 30% 20%, ${product.accent}33, transparent 55%), linear-gradient(160deg, #191b2e, #081020)`,
         }}
       >
-        <Image
-          src={product.image}
-          alt={`${product.character} — ${product.name} vinyl sticker`}
-          fill
-          className="object-contain p-3 transition duration-500 group-hover:scale-[1.03]"
-          sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 20vw"
-        />
+        <div className="absolute inset-3 overflow-hidden rounded-2xl">
+          <Image
+            src={product.image}
+            alt={`${product.character} — ${product.name} vinyl sticker`}
+            fill
+            className="object-contain transition duration-500 group-hover:scale-[1.03]"
+            sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 20vw"
+          />
+        </div>
         <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.15),transparent_65%)]" />
         <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-[#081020ee] via-[#081020aa] to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-4">
