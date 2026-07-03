@@ -153,7 +153,7 @@ export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: b
       id="marketplaces"
       ref={sectionRef}
       className={`luxury-gradient-bg relative flex min-h-screen items-start pb-20 md:pb-28 xl:items-center xl:pt-24 ${
-        saleBannerActive ? "pt-[12.5rem]" : "pt-28"
+        saleBannerActive ? "pt-[13.25rem]" : "pt-28"
       }`}
     >
       <Image

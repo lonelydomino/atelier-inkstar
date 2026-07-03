@@ -167,8 +167,8 @@ body {
 
 .sale-banner-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.45rem, 3.2vw, 2.15rem);
-  font-weight: 700;
+  font-size: clamp(1.96rem, 4.32vw, 2.9rem);
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: 0.03em;
   background: linear-gradient(
@@ -188,8 +188,8 @@ body {
 }
 
 .sale-banner-subline {
-  font-size: clamp(1rem, 2.2vw, 1.35rem);
-  font-weight: 600;
+  font-size: clamp(1.35rem, 2.97vw, 1.82rem);
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
@@ -203,7 +203,7 @@ body {
 
 .sale-banner-discount {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.04em;
   background: linear-gradient(
     110deg,
