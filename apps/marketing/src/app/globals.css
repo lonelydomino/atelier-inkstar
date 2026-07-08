@@ -114,67 +114,6 @@ body {
   }
 }
 
-@keyframes sale-banner-shine {
-  0% {
-    transform: translateX(-120%);
-  }
-  100% {
-    transform: translateX(120%);
-  }
-}
-
-@keyframes sale-banner-sparkle {
-  0%,
-  100% {
-    opacity: 0.45;
-    transform: scale(0.92);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.08);
-  }
-}
-
-.sale-banner {
-  background:
-    linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--ink-nebula) 85%, #000) 0%,
-      color-mix(in srgb, var(--ink-purple-glow) 70%, #000) 35%,
-      color-mix(in srgb, var(--ink-gold) 35%, var(--ink-navy-deep)) 50%,
-      color-mix(in srgb, var(--ink-purple-glow) 70%, #000) 65%,
-      color-mix(in srgb, var(--ink-nebula) 85%, #000) 100%
-    );
-  box-shadow:
-    0 0 28px color-mix(in srgb, var(--ink-gold) 22%, transparent),
-    inset 0 1px 0 color-mix(in srgb, var(--ink-white) 12%, transparent);
-}
-
-.sale-banner-shine {
-  background: linear-gradient(
-    105deg,
-    transparent 35%,
-    color-mix(in srgb, var(--ink-white) 28%, transparent) 50%,
-    transparent 65%
-  );
-  animation: sale-banner-shine 4.5s ease-in-out infinite;
-}
-
-.sale-banner-sparkle {
-  animation: sale-banner-sparkle 2.2s ease-in-out infinite;
-}
-
-.sale-banner-copy .sale-banner-headline {
-  font-weight: 900;
-  filter:
-    drop-shadow(0 0 0.4px rgba(255, 255, 255, 0.95))
-    drop-shadow(0 0 0.4px rgba(212, 175, 55, 0.65));
-}
-
-.sale-banner-dates {
-  font-weight: 500;
-}
-
 .shimmer-panel::after {
   content: "";
   position: absolute;
@@ -187,23 +126,6 @@ body {
   );
   animation: panel-shimmer 9s ease-in-out infinite;
   pointer-events: none;
-}
-
-.sale-link-badge {
-  animation: sale-link-badge-pulse 2.8s ease-in-out infinite;
-  box-shadow: 0 0 14px color-mix(in srgb, var(--ink-gold) 28%, transparent);
-}
-
-@keyframes sale-link-badge-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 10px color-mix(in srgb, var(--ink-gold) 18%, transparent);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 18px color-mix(in srgb, var(--ink-gold) 38%, transparent);
-    transform: scale(1.04);
-  }
 }
 
 @keyframes panel-shimmer {

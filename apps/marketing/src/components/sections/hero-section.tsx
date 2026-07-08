@@ -70,11 +70,9 @@ const marketplaceHeroLinks: HeroLink[] = marketplaceLinks.map((marketplace) => (
 function HeroLinkList({
   links,
   shimmer = false,
-  saleBadge = false,
 }: {
   links: HeroLink[];
   shimmer?: boolean;
-  saleBadge?: boolean;
 }) {
   return (
     <ul className="grid gap-3">
@@ -95,11 +93,6 @@ function HeroLinkList({
               </p>
               <p className="text-sm text-ink-muted">{link.description}</p>
             </div>
-            {saleBadge ? (
-              <span className="sale-link-badge relative z-10 shrink-0 rounded-full border border-ink-gold/70 bg-linear-to-r from-ink-gold to-[#f0d78c] px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-ink-navy uppercase sm:px-3 sm:text-[0.65rem]">
-                Sale!
-              </span>
-            ) : null}
             <span
               aria-hidden
               className="relative z-10 shrink-0 text-sm font-semibold text-ink-gold opacity-70 transition group-hover:translate-x-0.5 group-hover:opacity-100"
@@ -113,7 +106,7 @@ function HeroLinkList({
   );
 }
 
-export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: boolean }) {
+export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -152,9 +145,7 @@ export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: b
     <section
       id="marketplaces"
       ref={sectionRef}
-      className={`luxury-gradient-bg relative flex min-h-screen items-start pb-20 md:pb-28 xl:items-center ${
-        saleBannerActive ? "pt-[14.5rem] xl:pt-[14.5rem]" : "pt-28 xl:pt-24"
-      }`}
+      className="luxury-gradient-bg relative flex min-h-screen items-start pt-28 pb-20 md:pb-28 xl:items-center xl:pt-24"
     >
       <Image
         src={brandAssets.decor.starlineLeft}
@@ -211,11 +202,7 @@ export function HeroSection({ saleBannerActive = false }: { saleBannerActive?: b
               </p>
             </div>
 
-            <HeroLinkList
-              links={marketplaceHeroLinks}
-              shimmer
-              saleBadge={saleBannerActive}
-            />
+            <HeroLinkList links={marketplaceHeroLinks} shimmer />
 
             <div className="flex flex-col gap-1 pt-2">
               <p className="text-xs font-semibold tracking-[0.28em] text-ink-gold uppercase">
