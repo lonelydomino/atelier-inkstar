@@ -38,7 +38,7 @@ Details in [docs/MASTER_PLAN.md](docs/MASTER_PLAN.md).
 
 **Phase 2 MVP:** product grid, filters, collections, PDPs (size + website pricing), cart, demo checkout.
 
-**Still open (Phase 1):** Vercel go-live, final Chizuru art, newsletter provider, optional Anya + OG image, mobile Lighthouse pass.
+**Still open (Phase 1):** optional Anya + OG image, mobile Lighthouse pass. Newsletter deferred to Phase 8.
 
 **Marketplace links wired:** [Etsy](https://atelierinkstar.etsy.com), [TikTok Shop](https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077), [eBay](https://www.ebay.com/usr/atelierinkstarshop)
 

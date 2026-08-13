@@ -1,22 +1,25 @@
 ---
-description: Newsletter section hidden — remind Milo to re-add before/at site launch
+description: Newsletter deferred to Phase 8 — do not treat as Phase 1 blocker
 alwaysApply: true
 ---
 
-# Newsletter (temporarily removed)
+# Newsletter (deferred)
 
-**Stardust Dispatch** mailing list UI is **hidden** from the homepage until a real provider is wired.
+**Stardust Dispatch** mailing list UI is **hidden** from the homepage.
 
-## Remind Milo to re-add when
+**Deferred to Phase 8** (analytics / marketing ops) — not a Phase 1 or Phase 2 exit criterion.
 
-- Deploying `atelierinkstar.com` to Vercel, or
-- Milo picks a newsletter provider (Kit, Buttondown, Resend, etc.)
+## When to pick this back up
+
+- After shop payments + deploy are real, or
+- When Milo wants drop announcements by email
+- Provider options: Kit/ConvertKit, Buttondown, Resend, etc.
 
 ## How to restore
 
 1. Import `NewsletterSection` in `apps/marketing/src/app/page.tsx`
 2. Render `<NewsletterSection />` after `<ChizuruSection />` (or before footer)
-3. Wire form to provider — do **not** ship the fake local-only submit on a live site
+3. Wire form to a real provider — do **not** ship the fake local-only submit on a live site
 4. Component still lives at `apps/marketing/src/components/sections/newsletter-section.tsx`
 
 Until then, leave the section off the page.

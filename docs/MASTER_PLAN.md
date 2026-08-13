@@ -118,7 +118,7 @@ atelier-inkstar/
 | Marketplace CTAs | Etsy, TikTok, eBay | ✅ Real URLs + branded icons |
 | Social links | Instagram, Pixiv | ✅ Hero + footer |
 | CTA to shop | | ✅ → marketplaces + `#collection` |
-| Newsletter | | 🟡 Component exists; **hidden** until provider |
+| Newsletter | | ⏸️ Deferred to later phase (UI exists, hidden) |
 | Policy pages | Privacy, terms, refunds | ✅ |
 | Footer | Contact + links | ✅ `vesper@atelierinkstar.com` |
 
@@ -225,7 +225,7 @@ Build a beautiful premium landing page first.
 | Featured collections | ✅ 8 product mockups |
 | Marketplace / shop CTAs | ✅ Etsy + TikTok + eBay real URLs |
 | Social media links | ✅ Instagram + Pixiv |
-| Newsletter | 🟡 UI built; hidden pending provider (`.cursor/rules/newsletter-pending.mdc`) |
+| Newsletter | ⏸️ Deferred — UI built & hidden; not a Phase 1 exit criterion |
 | Policy pages | ✅ Privacy, terms, refunds |
 | Footer | ✅ |
 
@@ -237,12 +237,11 @@ Build a beautiful premium landing page first.
 
 ### Phase 1 — remaining before “complete”
 
-- [ ] Deploy to Vercel → `atelierinkstar.com` (config exists; connect + go-live)
-- [ ] Final Chizuru artwork (replace `public/chizuru/hero.png` + `mascot.png`)
-- [ ] Newsletter provider (Resend, ConvertKit, etc.) then re-enable section
 - [ ] Dedicated OG / social share image (metadata exists without custom image)
 - [ ] Lighthouse / Core Web Vitals pass on mobile
 - [ ] Anya mascot section (optional for Phase 1 exit)
+
+~~Final Chizuru / newsletter / Vercel connect~~ — Chizuru treated as good enough; `.com` is live; **newsletter deferred to a later phase** (see Phase 8).
 
 ### Phase 1 — done since original plan (commit-backed)
 
@@ -459,6 +458,11 @@ Prevents shipping mistakes across channels.
 
 Know which channel performs best; centralize business intelligence in admin.
 
+### Also in this phase (deferred from Phase 1)
+
+- [ ] **Stardust Dispatch newsletter** — pick provider (Kit, Buttondown, Resend, etc.), wire form, re-enable `NewsletterSection` on marketing
+- Component already exists at `apps/marketing/src/components/sections/newsletter-section.tsx` (hidden on purpose)
+
 ---
 
 ## Long-term vision
@@ -494,10 +498,10 @@ The website is not just a store — it is the **master operating system** for th
 
 | # | Task | Status |
 |---|------|--------|
-| 1 | Final Chizuru edit → replace `public/chizuru/hero.png` (+ mascot) | ⬜ Open |
+| 1 | Final Chizuru edit → replace `public/chizuru/hero.png` (+ mascot) | ✅ Good enough for now |
 | 2 | eBay shop URL | ✅ Done |
-| 3 | Connect repo to Vercel (`apps/marketing`) and go live | ⬜ Open (config only) |
-| 4 | Newsletter provider choice | ⬜ Open |
+| 3 | Connect repo to Vercel (`apps/marketing`) and go live | ✅ `.com` live |
+| 4 | Newsletter provider choice | ⏸️ Deferred → Phase 8 |
 | 5 | Social profile URLs (Instagram, Pixiv) | ✅ Done |
 | 6 | Product images for featured grid | ✅ Mockups in place |
 | 7 | Optional: Anya mascot art for Phase 1 | ⬜ Open |
