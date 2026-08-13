@@ -69,9 +69,6 @@ function ProductCard({
       </div>
       <div className="space-y-1 p-5">
         <p className="text-sm font-medium text-white">{product.name}</p>
-        <p className="text-xs tracking-wide text-ink-muted uppercase">
-          {product.baseSku}
-        </p>
       </div>
     </motion.article>
   );

@@ -71,7 +71,6 @@ export function AddToCartPanel({ product }: { product: Product }) {
           <p className="font-[family-name:var(--font-display)] text-3xl text-white">
             {selected ? formatPrice(selected.price) : "—"}
           </p>
-          <p className="mt-1 text-xs text-ink-muted">{selected?.sku}</p>
         </div>
         <label className="flex flex-col gap-1 text-sm text-ink-muted">
           Qty

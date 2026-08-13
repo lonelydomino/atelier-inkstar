@@ -36,7 +36,6 @@ export function filterProducts(filters: ProductFilters): Product[] {
       product.name,
       product.character,
       product.franchise,
-      product.baseSku,
       product.description,
     ]
       .join(" ")

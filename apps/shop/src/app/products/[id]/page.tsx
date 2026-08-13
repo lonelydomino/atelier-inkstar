@@ -65,7 +65,7 @@ export default async function ProductPage({ params }: PageProps) {
               {product.name}
             </h1>
             <p className="text-sm text-ink-muted">
-              {product.baseSku} · {priceRangeLabel(product.baseSku, "website")}
+              {priceRangeLabel(product.baseSku, "website")}
             </p>
             <p className="max-w-xl text-base leading-7 text-ink-muted">
               {product.description}

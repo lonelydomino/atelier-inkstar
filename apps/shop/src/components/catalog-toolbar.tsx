@@ -36,7 +36,7 @@ export function CatalogToolbar({ filters, resultCount }: Props) {
           <input
             name="q"
             defaultValue={filters.q ?? ""}
-            placeholder="Character, franchise, SKU…"
+            placeholder="Character, franchise, name…"
             className="rounded-xl border border-white/10 bg-ink-navy/60 px-3 py-2.5 text-white outline-none focus:border-ink-gold/50"
           />
         </label>

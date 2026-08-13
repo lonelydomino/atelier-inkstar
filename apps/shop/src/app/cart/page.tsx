@@ -59,9 +59,7 @@ export default function CartPage() {
                   >
                     {item.name}
                   </Link>
-                  <p className="text-sm text-ink-muted">
-                    {sizeLabel(item.size)} · {item.sku}
-                  </p>
+                  <p className="text-sm text-ink-muted">{sizeLabel(item.size)}</p>
                   <p className="text-sm text-white">{formatPrice(item.price)}</p>
                 </div>
                 <div className="flex items-center gap-3">
