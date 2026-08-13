@@ -1,6 +1,6 @@
 # Atelier Inkstar — Master Website & Commerce Platform Plan (v2)
 
-**Last updated:** August 12, 2026 (synced to `main` @ `031a5da`)  
+**Last updated:** August 12, 2026 (Phase 2 shop MVP)  
 **Repo:** https://github.com/lonelydomino/atelier-inkstar  
 **Status doc:** This file is the source of truth for roadmap + what is already built.
 
@@ -50,21 +50,22 @@ This is the core architectural principle. All phases below serve this goal.
 | Favicon + apple touch icon | ✅ Done |
 | Featured product mockups (8) | ✅ In `public/products/` |
 | Vercel project config (`apps/marketing/vercel.json`) | ✅ In repo — **not verified live** |
-| Phase 2 shop frontend | ⬜ Not started (`apps/shop` missing) |
-| Phase 3 catalog engine (DB) | 🟡 Static catalog + `generateVariants()` stub only |
+| Phase 2 shop frontend | 🟡 MVP in `apps/shop` — live payments + deploy pending |
+| Phase 3 catalog engine (DB) | 🟡 Static products + per-platform pricing ladders; no Supabase yet |
 | Phase 4–8 (admin, listings, sync, shipping, analytics) | ⬜ Not started |
-| Supabase / R2 / Stripe / PayPal | ⬜ Not started |
+| Supabase / R2 | ⬜ Not started |
+| Stripe / PayPal | 🟡 Shop demo checkout UI only (no live keys) |
 
 ### Repository layout (today)
 
 ```
 atelier-inkstar/
 ├── apps/
-│   └── marketing/              ✅ Phase 1 (.com)
-│   └── shop/                   ⬜ Phase 2
+│   ├── marketing/              ✅ Phase 1 (.com)
+│   ├── shop/                   🟡 Phase 2 MVP (.shop)
 │   └── admin/                  ⬜ Phase 4
 ├── packages/
-│   ├── catalog/                🟡 Static featured products + generateVariants() stub
+│   ├── catalog/                🟡 Static products + website/eBay/Etsy pricing
 │   ├── config/                 ✅ Brand, social URLs, policies, founder (Vesper)
 │   └── database/               ⬜ Phase 3 (Supabase / Postgres)
 ├── docs/
@@ -72,13 +73,13 @@ atelier-inkstar/
 └── .cursor/rules/              ✅ Alya, Vesper, Chizuru pending, newsletter pending
 ```
 
-### Tech in use (marketing app)
+### Tech in use (marketing + shop)
 
 - Next.js 16 (App Router), TypeScript, Tailwind v4
-- Framer Motion + GSAP
-- pnpm monorepo
-- Static homepage (`pnpm build` passes)
-- `apps/marketing/vercel.json` install/build commands for monorepo deploy
+- Framer Motion + GSAP (marketing)
+- pnpm monorepo (`pnpm dev` / `pnpm dev:shop`)
+- Static marketing homepage + shop SSG product routes (`pnpm build` passes both)
+- `apps/marketing/vercel.json` + `apps/shop/vercel.json` monorepo deploy configs
 
 ### Brand assets integrated
 
@@ -134,7 +135,9 @@ atelier-inkstar/
 - Product catalog browsing
 - Cart, checkout, orders
 
-**App folder:** `apps/shop` (not created yet)
+**App folder:** `apps/shop` ✅ scaffolded (Phase 2 MVP)
+
+**MVP routes:** `/`, `/products/[id]`, `/collections/[id]`, `/cart`, `/checkout`, `/checkout/success`
 
 ---
 
@@ -166,15 +169,15 @@ Use Atelier Inkstar brand kit (`Desktop/Atelier Inkstar/01 Brand Assets`).
 
 | Layer | Choice | Status |
 |-------|--------|--------|
-| Frontend | Next.js (App Router), TypeScript, Tailwind, Framer Motion | ✅ Marketing |
-| UI primitives | shadcn/ui (optional) | ⬜ Shop/admin |
+| Frontend | Next.js (App Router), TypeScript, Tailwind, Framer Motion | ✅ Marketing + shop |
+| UI primitives | shadcn/ui (optional) | ⬜ Admin (shop uses custom panels) |
 | Backend (initial) | **Supabase** | ⬜ |
 | Backend (long-term) | PostgreSQL + custom services | ⬜ |
 | ORM (candidate) | Drizzle — align with Supabase Postgres | ⬜ Discuss at Phase 3 |
 | Storage | Cloudflare R2 (preferred) or Supabase Storage | ⬜ |
-| Payments | Stripe + PayPal | ⬜ |
+| Payments | Stripe + PayPal | 🟡 Shop demo checkout only |
 | Auth | Supabase Auth or Clerk | ⬜ |
-| Hosting | Vercel (frontend), Supabase (backend), Cloudflare CDN | 🟡 Vercel config in repo; live deploy unverified |
+| Hosting | Vercel (frontend), Supabase (backend), Cloudflare CDN | 🟡 Config in repo; live deploy unverified |
 
 **Why Next.js:** Best balance of beauty, performance, scalability, SEO.
 
@@ -264,16 +267,30 @@ Build the customer-facing storefront.
 
 | Feature | Status |
 |---------|--------|
-| Product grid | ⬜ |
-| Filtering (franchise, character, size, category, spicy/standard, availability) | ⬜ |
-| Collections | ⬜ |
-| Search | ⬜ |
-| Product pages (gallery, mockups, size selector, pricing, description, reviews, related) | ⬜ |
-| Cart | ⬜ |
-| Checkout (Stripe + PayPal) | ⬜ |
+| Product grid | ✅ |
+| Filtering (franchise, spicy/standard, availability, search) | ✅ Size filter deferred (variant-level) |
+| Collections | ✅ `/collections/[id]` |
+| Search | ✅ Query param `q` |
+| Product pages (gallery, size selector, pricing, description, related) | ✅ Mockup gallery is single image for now; reviews deferred |
+| Cart | ✅ localStorage |
+| Checkout (Stripe + PayPal) | 🟡 Demo flow with method choice — **live payment APIs not wired** |
 
 **App:** `apps/shop`  
-**Design:** Premium but conversion-focused — less spectacle than `.com`.
+**Design:** Premium but conversion-focused — less spectacle than `.com`.  
+**Local:** `pnpm dev:shop` → http://localhost:3001
+
+### Phase 2 — remaining
+
+- [ ] Wire live Stripe Checkout + PayPal
+- [ ] Deploy shop to Vercel → `atelierinkstar.shop`
+- [ ] Multi-image PDP galleries / lifestyle mockups
+- [ ] Reviews (optional until order volume)
+- [ ] Size-level inventory filtering (needs Phase 3 stock)
+- [ ] Link marketing CTAs to `.shop` when live
+
+### Catalog support for Phase 2
+
+`packages/catalog` now seeds full `Product` records (description, spicy, availability, collections) and per-platform pricing ladders (`website` / `ebay` / `etsy`) via `generateVariants()`.
 
 ---
 
@@ -309,7 +326,7 @@ Every product exists as **one canonical database object**.
 | Base SKU | `CSM-MAKIMA` (FRANCHISE-CHARACTER) |
 | Variants (auto) | `CSM-MAKIMA-3IN` … `CSM-MAKIMA-6IN` |
 
-**Today:** `packages/catalog` holds **static** featured products + marketplace links. `generateVariants()` uses a single default price ladder — **must be extended** for per-platform pricing in Phase 3.
+**Today:** `packages/catalog` holds **static** shop/marketing products + marketplace links. `generateVariants({ platform })` supports website / eBay / Etsy ladders. Phase 3 still needs Supabase as the canonical store.
 
 ### Global defaults
 
@@ -462,8 +479,8 @@ The website is not just a store — it is the **master operating system** for th
 
 ```
 🟡 Phase 1  .com landing          (~95% — deploy + polish)
-⬜ Phase 2  .shop storefront
-⬜ Phase 3  Catalog engine        (Supabase + platform pricing)
+🟡 Phase 2  .shop storefront      (MVP — live payments + deploy)
+⬜ Phase 3  Catalog engine        (Supabase + canonical DB)
 ⬜ Phase 4  Admin panel
 ⬜ Phase 5  Listing generator    (high priority after catalog)
 ⬜ Phase 6  Marketplace sync
@@ -490,7 +507,7 @@ The website is not just a store — it is the **master operating system** for th
 
 ## Commit history (milestones)
 
-Cross-checked against `git log` on `main` through `031a5da` (2026-07-08).
+Cross-checked against current `main` including Phase 2 shop MVP.
 
 | Commit | Summary |
 |--------|---------|
@@ -509,5 +526,7 @@ Cross-checked against `git log` on `main` through `031a5da` (2026-07-08).
 | `9d5efaf` / `82eb165` / `2cf644c` | Social links (Instagram, Pixiv) + footer wiring |
 | `d2465a4` / `3efea16` | Hero merged with shop/social; Shop nav behavior |
 | `2ea6fa8` → `031a5da` | Anime Expo sale banner added, polished, then removed |
+| `e2ea557` | Master plan + README synced to post–Phase 1 reality |
+| Phase 2 shop MVP | `apps/shop` grid/PDP/collections/cart/demo checkout + catalog pricing ladders |
 
 Full history lives in git; this table is the durable roadmap checkpoint list, not every typography fix.

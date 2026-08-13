@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --ink-navy: #081020;
+  --ink-navy-deep: #191b2e;
+  --ink-slate: #2d3352;
+  --ink-gold: #d4af37;
+  --ink-pink: #ffb6cc;
+  --ink-white: #ffffff;
+  --background: var(--ink-navy);
+  --foreground: #f4f0ff;
+  --muted: #a8b0d4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink-navy: var(--ink-navy);
+  --color-ink-navy-deep: var(--ink-navy-deep);
+  --color-ink-slate: var(--ink-slate);
+  --color-ink-gold: var(--ink-gold);
+  --color-ink-pink: var(--ink-pink);
+  --color-ink-muted: var(--muted);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ink-gold) 35%, transparent);
+  color: var(--ink-white);
+}
+
+.shop-bg {
+  background:
+    radial-gradient(
+      ellipse 70% 40% at 50% -5%,
+      color-mix(in srgb, var(--ink-gold) 10%, transparent),
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--ink-navy) 0%, var(--ink-navy-deep) 55%, #0d1228 100%);
+}
+
+.shop-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.shop-panel {
+  background: color-mix(in srgb, var(--ink-slate) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink-gold) 18%, transparent);
+  backdrop-filter: blur(12px);
+}

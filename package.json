@@ -3,9 +3,14 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter marketing dev",
-    "build": "pnpm --filter marketing exec next build",
-    "lint": "pnpm --filter marketing lint",
-    "start": "pnpm --filter marketing start"
+    "dev:shop": "pnpm --filter shop dev",
+    "dev:all": "pnpm --parallel --filter marketing --filter shop dev",
+    "build": "pnpm --filter marketing build && pnpm --filter shop build",
+    "build:marketing": "pnpm --filter marketing build",
+    "build:shop": "pnpm --filter shop build",
+    "lint": "pnpm --filter marketing lint && pnpm --filter shop lint",
+    "start": "pnpm --filter marketing start",
+    "start:shop": "pnpm --filter shop start"
   },
   "packageManager": "pnpm@11.8.0"
 }
