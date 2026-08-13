@@ -1,6 +1,6 @@
 # Atelier Inkstar — Master Website & Commerce Platform Plan (v2)
 
-**Last updated:** March 2026  
+**Last updated:** August 12, 2026 (synced to `main` @ `031a5da`)  
 **Repo:** https://github.com/lonelydomino/atelier-inkstar  
 **Status doc:** This file is the source of truth for roadmap + what is already built.
 
@@ -41,14 +41,19 @@ This is the core architectural principle. All phases below serve this goal.
 | Area | Status |
 |------|--------|
 | Monorepo + GitHub (`main`) | ✅ Done |
-| Phase 1 marketing app (code) | 🟡 ~90% — deploy + polish pending |
+| Phase 1 marketing app (code) | 🟡 ~95% — deploy + a few polish items left |
 | Real Etsy URL | ✅ `atelierinkstar.etsy.com` |
 | Real TikTok Shop URL | ✅ Verified store link |
-| eBay URL | ⬜ Placeholder |
-| Phase 2 shop frontend | ⬜ Not started |
-| Phase 3 catalog engine (DB) | 🟡 SKU generator stub only |
+| Real eBay URL | ✅ `ebay.com/usr/atelierinkstarshop` |
+| Social links (Instagram, Pixiv) | ✅ Wired in hero + footer |
+| Policy pages (privacy / terms / refunds) | ✅ Done |
+| Favicon + apple touch icon | ✅ Done |
+| Featured product mockups (8) | ✅ In `public/products/` |
+| Vercel project config (`apps/marketing/vercel.json`) | ✅ In repo — **not verified live** |
+| Phase 2 shop frontend | ⬜ Not started (`apps/shop` missing) |
+| Phase 3 catalog engine (DB) | 🟡 Static catalog + `generateVariants()` stub only |
 | Phase 4–8 (admin, listings, sync, shipping, analytics) | ⬜ Not started |
-| Vercel / Supabase / R2 / Stripe | ⬜ Not started |
+| Supabase / R2 / Stripe / PayPal | ⬜ Not started |
 
 ### Repository layout (today)
 
@@ -59,10 +64,12 @@ atelier-inkstar/
 │   └── shop/                   ⬜ Phase 2
 │   └── admin/                  ⬜ Phase 4
 ├── packages/
-│   ├── catalog/                🟡 Static data + generateVariants() stub
-│   ├── config/                 ✅ Brand tokens, mascot copy
+│   ├── catalog/                🟡 Static featured products + generateVariants() stub
+│   ├── config/                 ✅ Brand, social URLs, policies, founder (Vesper)
 │   └── database/               ⬜ Phase 3 (Supabase / Postgres)
-└── .cursor/rules/              ✅ Alya persona, Chizuru pending-edit
+├── docs/
+│   └── MASTER_PLAN.md          ✅ This file
+└── .cursor/rules/              ✅ Alya, Vesper, Chizuru pending, newsletter pending
 ```
 
 ### Tech in use (marketing app)
@@ -71,17 +78,21 @@ atelier-inkstar/
 - Framer Motion + GSAP
 - pnpm monorepo
 - Static homepage (`pnpm build` passes)
+- `apps/marketing/vercel.json` install/build commands for monorepo deploy
 
 ### Brand assets integrated
 
 | Asset | Status |
 |-------|--------|
-| Wordmark (`logo-text2.png`) | ✅ Header + hero |
-| Approved emblem | ✅ Hero accent |
+| Wordmark | ✅ Header, hero, footer |
+| Approved emblem (alt / orbital variations used) | ✅ Hero accent |
 | Starline decorations | ✅ Hero |
-| Chizuru (`chizuru1.png`) | 🟡 Temporary — Vesper will replace after editing |
+| Platform icons (Etsy, TikTok, eBay, Instagram, Pixiv) | ✅ |
+| Chizuru hero (`public/chizuru/hero.png`) | 🟡 Temporary — see `.cursor/rules/chizuru-hero-pending.mdc` |
+| Chizuru mascot (`public/chizuru/mascot.png`) | 🟡 Temporary (part 2 portrait) |
 | Anya mascot | ⬜ Not on site yet |
-| Real product photos in featured grid | ⬜ Gradient placeholders |
+| Featured sticker mockups (8 products) | ✅ Treasure collection section |
+| Dedicated OG share image | ⬜ Metadata present; no custom OG image asset yet |
 
 ---
 
@@ -100,12 +111,15 @@ atelier-inkstar/
 | Section | v2 requirement | Status |
 |---------|----------------|--------|
 | Home / Hero | Stunning, animated, premium | ✅ Built |
-| Brand statement | | ✅ In hero + about |
-| Mascot showcase (Chizuru, Anya) | | 🟡 Chizuru only (temp art) |
-| Featured collections | | ✅ Data-driven (5 characters) |
-| Social links | | 🟡 Placeholder links |
+| Brand statement / My Story | Founder voice (Vesper) | ✅ |
+| Mascot showcase (Chizuru, Anya) | | 🟡 Chizuru only (temp art); Anya missing |
+| Featured collections | | ✅ 8 mockup products (static catalog) |
+| Marketplace CTAs | Etsy, TikTok, eBay | ✅ Real URLs + branded icons |
+| Social links | Instagram, Pixiv | ✅ Hero + footer |
 | CTA to shop | | ✅ → marketplaces + `#collection` |
-| Footer | | ✅ |
+| Newsletter | | 🟡 Component exists; **hidden** until provider |
+| Policy pages | Privacy, terms, refunds | ✅ |
+| Footer | Contact + links | ✅ `vesper@atelierinkstar.com` |
 
 **Feel:** Luxurious, elegant, animated, highly polished. Performance-critical — animations must not slow the site.
 
@@ -141,6 +155,7 @@ Use Atelier Inkstar brand kit (`Desktop/Atelier Inkstar/01 Brand Assets`).
 | Aesthetic | Celestial, premium, elegant, anime luxury boutique, ink + stardust |
 | **Primary palette** | Midnight Navy `#081020`, Deep Navy `#191B2E`, Slate Blue `#2D3352`, Gold `#D4AF37`, Soft Pink `#FFB6CC`, White `#FFFFFF` |
 | Mascots | **Chizuru** (primary), **Anya** |
+| Founder public alias | **Vesper** |
 | Emblem | Use exact approved wolf + crescent emblem — never redesign |
 
 **Goals:** Extremely high quality, smooth animations, fast performance, premium feel, mobile friendly.
@@ -155,11 +170,11 @@ Use Atelier Inkstar brand kit (`Desktop/Atelier Inkstar/01 Brand Assets`).
 | UI primitives | shadcn/ui (optional) | ⬜ Shop/admin |
 | Backend (initial) | **Supabase** | ⬜ |
 | Backend (long-term) | PostgreSQL + custom services | ⬜ |
-| ORM (candidate) | Drizzle (already stubbed in repo) — align with Supabase Postgres | 🟡 Discuss at Phase 3 |
+| ORM (candidate) | Drizzle — align with Supabase Postgres | ⬜ Discuss at Phase 3 |
 | Storage | Cloudflare R2 (preferred) or Supabase Storage | ⬜ |
 | Payments | Stripe + PayPal | ⬜ |
 | Auth | Supabase Auth or Clerk | ⬜ |
-| Hosting | Vercel (frontend), Supabase (backend), Cloudflare CDN | ⬜ |
+| Hosting | Vercel (frontend), Supabase (backend), Cloudflare CDN | 🟡 Vercel config in repo; live deploy unverified |
 
 **Why Next.js:** Best balance of beauty, performance, scalability, SEO.
 
@@ -202,12 +217,13 @@ Build a beautiful premium landing page first.
 | Section | Status |
 |---------|--------|
 | Hero (emblem, Chizuru, wordmark, particles, motion) | ✅ |
-| Brand statement | ✅ |
+| Brand statement / My Story (Vesper) | ✅ |
 | Mascot showcase | 🟡 Chizuru temp; Anya missing |
-| Featured collections | ✅ |
-| Marketplace / shop CTAs | 🟡 Etsy + TikTok real; eBay TBD |
-| Social media links | ⬜ Placeholders |
-| Newsletter | 🟡 UI only, no backend |
+| Featured collections | ✅ 8 product mockups |
+| Marketplace / shop CTAs | ✅ Etsy + TikTok + eBay real URLs |
+| Social media links | ✅ Instagram + Pixiv |
+| Newsletter | 🟡 UI built; hidden pending provider (`.cursor/rules/newsletter-pending.mdc`) |
+| Policy pages | ✅ Privacy, terms, refunds |
 | Footer | ✅ |
 
 ### Hero goals
@@ -218,15 +234,23 @@ Build a beautiful premium landing page first.
 
 ### Phase 1 — remaining before “complete”
 
-- [ ] Deploy to Vercel → `atelierinkstar.com`
-- [ ] Final Chizuru artwork (replace `public/chizuru/hero.png`)
-- [ ] Real eBay shop URL
-- [ ] Newsletter provider (Resend, ConvertKit, etc.)
-- [ ] Real social links
-- [ ] Favicon + OG image
-- [ ] Real sticker images in featured grid
+- [ ] Deploy to Vercel → `atelierinkstar.com` (config exists; connect + go-live)
+- [ ] Final Chizuru artwork (replace `public/chizuru/hero.png` + `mascot.png`)
+- [ ] Newsletter provider (Resend, ConvertKit, etc.) then re-enable section
+- [ ] Dedicated OG / social share image (metadata exists without custom image)
 - [ ] Lighthouse / Core Web Vitals pass on mobile
 - [ ] Anya mascot section (optional for Phase 1 exit)
+
+### Phase 1 — done since original plan (commit-backed)
+
+- [x] Real eBay shop URL (`625075d`)
+- [x] Real social links — Instagram + Pixiv (`9d5efaf`, `82eb165`, `2cf644c`)
+- [x] Favicon + apple touch icon (`9075833`)
+- [x] Featured sticker mockups (`25c235b`, `4079fce`)
+- [x] Policy pages (`530e237`)
+- [x] Vercel monorepo build config (`3174eb3`)
+- [x] Founder story + Vesper alias (`362ac8c`, `3ba9349`, …)
+- [x] Temporary Anime Expo sale banner added then removed (`2ea6fa8` → `031a5da`)
 
 ---
 
@@ -285,7 +309,7 @@ Every product exists as **one canonical database object**.
 | Base SKU | `CSM-MAKIMA` (FRANCHISE-CHARACTER) |
 | Variants (auto) | `CSM-MAKIMA-3IN` … `CSM-MAKIMA-6IN` |
 
-**Today:** `packages/catalog/src/variants.ts` generates variants with a single default price ladder — **must be extended** for per-platform pricing in Phase 3.
+**Today:** `packages/catalog` holds **static** featured products + marketplace links. `generateVariants()` uses a single default price ladder — **must be extended** for per-platform pricing in Phase 3.
 
 ### Global defaults
 
@@ -437,11 +461,11 @@ The website is not just a store — it is the **master operating system** for th
 ## Phase order summary
 
 ```
-✅ Phase 1  .com landing          (in progress — deploy next)
+🟡 Phase 1  .com landing          (~95% — deploy + polish)
 ⬜ Phase 2  .shop storefront
 ⬜ Phase 3  Catalog engine        (Supabase + platform pricing)
 ⬜ Phase 4  Admin panel
-⬜ Phase 5  Listing generator    (high priority)
+⬜ Phase 5  Listing generator    (high priority after catalog)
 ⬜ Phase 6  Marketplace sync
 ⬜ Phase 7  Shipping engine
 ⬜ Phase 8  Analytics
@@ -451,18 +475,22 @@ The website is not just a store — it is the **master operating system** for th
 
 ## Vesper action items (founder)
 
-| # | Task |
-|---|------|
-| 1 | Final Chizuru edit → replace `public/chizuru/hero.png` |
-| 2 | ~~eBay shop URL~~ | ✅ |
-| 3 | Connect repo to Vercel (`apps/marketing`) |
-| 4 | Newsletter provider choice |
-| 5 | Social profile URLs |
-| 6 | Product images for featured grid |
+| # | Task | Status |
+|---|------|--------|
+| 1 | Final Chizuru edit → replace `public/chizuru/hero.png` (+ mascot) | ⬜ Open |
+| 2 | eBay shop URL | ✅ Done |
+| 3 | Connect repo to Vercel (`apps/marketing`) and go live | ⬜ Open (config only) |
+| 4 | Newsletter provider choice | ⬜ Open |
+| 5 | Social profile URLs (Instagram, Pixiv) | ✅ Done |
+| 6 | Product images for featured grid | ✅ Mockups in place |
+| 7 | Optional: Anya mascot art for Phase 1 | ⬜ Open |
+| 8 | Optional: dedicated OG share image | ⬜ Open |
 
 ---
 
 ## Commit history (milestones)
+
+Cross-checked against `git log` on `main` through `031a5da` (2026-07-08).
 
 | Commit | Summary |
 |--------|---------|
@@ -472,3 +500,14 @@ The website is not just a store — it is the **master operating system** for th
 | `39146c8` | TikTok Shop URL |
 | `6e99550` | v2 master plan integrated |
 | `625075d` | eBay seller URL |
+| `25c235b` / `4079fce` | Featured sticker mockups (8 products) |
+| `362ac8c` / `3ba9349` | Founder story + Vesper alias |
+| `75541a9` | Newsletter section hidden pending provider |
+| `530e237` | Privacy, terms, refund policy pages |
+| `9075833` | Emblem favicon + apple touch icon |
+| `3174eb3` | Vercel monorepo build config for marketing |
+| `9d5efaf` / `82eb165` / `2cf644c` | Social links (Instagram, Pixiv) + footer wiring |
+| `d2465a4` / `3efea16` | Hero merged with shop/social; Shop nav behavior |
+| `2ea6fa8` → `031a5da` | Anime Expo sale banner added, polished, then removed |
+
+Full history lives in git; this table is the durable roadmap checkpoint list, not every typography fix.

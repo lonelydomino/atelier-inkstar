@@ -28,14 +28,22 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Current status (short)
 
+Synced to `main` @ `031a5da` — details in [docs/MASTER_PLAN.md](docs/MASTER_PLAN.md).
+
 | Phase | Status |
 |-------|--------|
-| 1 — `.com` landing | 🟡 Built locally; not deployed |
+| 1 — `.com` landing | 🟡 ~95% code done; deploy + polish left |
 | 2 — `.shop` | ⬜ Not started |
-| 3 — Catalog engine | ⬜ Stub only |
+| 3 — Catalog engine | 🟡 Static data + SKU stub only |
 | 4–8 — Admin, listings, sync, shipping, analytics | ⬜ Not started |
 
+**Done in Phase 1:** marketplace URLs, Instagram + Pixiv, favicon, 8 featured mockups, policy pages, Vercel config (not verified live).
+
+**Still open:** Vercel go-live, final Chizuru art, newsletter provider, optional Anya + OG image, mobile Lighthouse pass.
+
 **Marketplace links wired:** [Etsy](https://atelierinkstar.etsy.com), [TikTok Shop](https://shop.tiktok.com/us/store/atelierinkstar/7494648125875652077), [eBay](https://www.ebay.com/usr/atelierinkstarshop)
+
+**Social:** [Instagram](https://www.instagram.com/atelierinkstar/), [Pixiv](https://www.pixiv.net/en/users/127432752)
 
 ## Tech stack
 
@@ -46,8 +54,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Assets
 
-- `apps/marketing/public/brand/` — wordmark, emblem
-- `apps/marketing/public/chizuru/hero.png` — **temporary** (Vesper editing final)
+- `apps/marketing/public/brand/` — wordmark, emblem, platform icons
+- `apps/marketing/public/chizuru/hero.png` + `mascot.png` — **temporary** (Vesper editing final)
+- `apps/marketing/public/products/` — featured collection mockups (8)
 - `apps/marketing/public/decor/` — starlines
 
 ## Git workflow
